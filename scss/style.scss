@@ -1,0 +1,36 @@
+$primary-font: Arial, sans-serif;
+$primary-color:red;
+
+$large-screen:45em;
+$medium-screen:30em;
+
+/*test mixin is used to pump out a red outline around the object*/
+@mixin test(){
+	outline:1px solid red;
+}
+
+@mixin border-radius($radius){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+h1{
+	border: 1px solid $primary-color;
+	font-family: $primary-font;
+}
+
+
+body{
+	margin:0 auto;
+	padding:0;
+	width:1020px;
+	@include test;
+}
+
+/*main nav*/
+@import 'navigation';
+
+/*footer*/
+@import 'footer';
